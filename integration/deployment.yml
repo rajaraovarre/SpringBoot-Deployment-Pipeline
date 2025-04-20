@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wezvatechdemo
+  namespace: integration
+  labels:
+    app: wezvatechdemo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wezvatechdemo
+  template:
+    metadata:
+      labels:
+        app: wezvatechdemo
+    spec:
+      containers:
+      - name: wezvatechdemo
+        image: adamtravis/wezvatechbackend:int0
+        ports:
+        - containerPort: 8080

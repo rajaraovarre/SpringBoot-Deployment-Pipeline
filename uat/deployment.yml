@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wezvatechdemo
+  namespace: uat
+  labels:
+    app: wezvatechdemo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wezvatechdemo
+  template:
+    metadata:
+      labels:
+        app: wezvatechdemo
+    spec:
+      containers:
+      - name: wezvatechdemo
+        image: adamtravis/wezvatechbackend:fb0
+        ports:
+        - containerPort: 8080
