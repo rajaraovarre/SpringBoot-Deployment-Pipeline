@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: wezvatechdemo
-        image: adamtravis/wezvatechbackend:fb0
+        image: adamtravis/democicd:rel1
         ports:
         - containerPort: 8080
