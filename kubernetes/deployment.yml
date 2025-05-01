@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: wezvatechdemo
+  name: UNOdemo
   labels:
-    app: wezvatechdemo
+    app: UNOdemo
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: wezvatechdemo
+      app: UNOdemo
   template:
     metadata:
       labels:
-        app: wezvatechdemo
+        app: UNOdemo
     spec:
       containers:
-      - name: wezvatechdemo
-        image: adamtravis/wezvatechbackend:9
+      - name: UNOdemo
+        image: wahid1moncef/UNObackend:9
         ports:
         - containerPort: 8080
