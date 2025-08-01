@@ -14,7 +14,7 @@ pipeline {
               sh "sed -i 's/image: adamtravis.*/image: adamtravis\\/democicd:$IMAGETAG/g' deployment.yml" 
 	    }
 	    sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
-	    sh "git push https://scmlearningcentre:$PASSWD@gitlab.com/learndevopseasy/devsecops/spingboot-cd-pipeline.git"
+	    sh "git push https://abdessamad.elattrassi23:$PASSWD@gitlab.com/abdessamad.attrassi/spingboot-cd-pipeline.git"
     }
   }
  }
