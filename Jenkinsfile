@@ -9,7 +9,7 @@ pipeline {
   stage('Deploy')
   {
     steps { 
-        git branch: 'springboot', credentialsId: 'GitlabCred', url: 'https://gitlab.com/udaykumar5980/spingboot-cd-pipeline.git'
+        git branch: 'main', credentialsId: 'gitlabapi', url: 'https://gitlab.com/udaykumar5980/spingboot-cd-pipeline.git'
       dir ("./${params.environment}") {
               sh "sed -i 's/image: adamtravis.*/image: adamtravis\\/democicd:$IMAGETAG/g' deployment.yml" 
 	    }
