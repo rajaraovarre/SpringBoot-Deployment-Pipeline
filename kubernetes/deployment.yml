@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: demo
-        image: dark5980/demo:29
+        image: dark5980/demo:31
         ports:
         - containerPort: 8080
