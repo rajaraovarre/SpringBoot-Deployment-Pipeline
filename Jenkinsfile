@@ -9,13 +9,12 @@ pipeline {
   stage('Deploy')
   {
     steps { 
-        git branch: 'main', credentialsId: 'git-token', url: 'https://gitlab.com/udaykumar5980/spingboot-cd-pipeline.git'
+        git branch: 'main', credentialsId: 'GitlabCred', url: 'https://gitlab.com/udaykumar5980/spingboot-cd-pipeline.git'
       dir ("./${params.environment}") {
               sh "sed -i 's/image: adamtravis.*/image: adamtravis\\/democicd:$IMAGETAG/g' deployment.yml" 
 	    }
 	    sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
-	    sh "git push https://udaykumar5980:$PASSWD@gitlab.com/udaykumar5980/spingboot-cd-pipeline.git"
+	    sh "git push sh "git push https://udaykumar5980:${PASSWD}@gitlab.com/udaykumar5980/spingboot-cd-pipeline.git"
     }
   }
  }
-}
