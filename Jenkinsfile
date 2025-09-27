@@ -1,7 +1,7 @@
 pipeline {
  agent { label 'demo' }
  parameters {
-     password(name: 'PASSWD', defaultValue: '', description: 'Please Enter your Gitlab password')
+     password(name: 'PASSWD', defaultValue: '7396241226@Hu', description: 'Please Enter your Gitlab password')
      string(name: 'IMAGETAG', defaultValue: '1', description: 'Please Enter the Image Tag to Deploy?')
      choice(name:'environment', choices: ['functional', 'integration', 'regression', 'uat', 'release' ] ,description: 'select where need to deploy')
  }
@@ -14,7 +14,7 @@ pipeline {
               sh "sed -i 's/image: adamtravis.*/image: adamtravis\\/democicd:$IMAGETAG/g' deployment.yml" 
 	    }
 	    sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
-	    sh "git push https://scmlearningcentre:$PASSWD@gitlab.com/learndevopseasy/devsecops/spingboot-cd-pipeline.git"
+	    sh "git push https://udaykumar5980:$PASSWD@gitlab.com/learndevopseasy/devsecops/spingboot-cd-pipeline.git"
     }
   }
  }
