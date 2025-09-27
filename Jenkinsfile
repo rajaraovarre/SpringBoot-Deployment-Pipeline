@@ -11,7 +11,7 @@ pipeline {
         git branch: 'main', credentialsId: 'GitlabCred', url: 'https://gitlab.com/udaykumar5980/spingboot-cd-pipeline.git'
 
         dir ("./${params.environment}") {
-          sh "sed -i 's|image: adamtravis.*|image: adamtravis/democicd:${IMAGETAG}|g' deployment.yml"
+          sh "sed -i 's|image: dark5980.*|image: dark5980/demo:${IMAGETAG}|g' deployment.yml"
         }
 
         sh """
