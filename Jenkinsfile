@@ -1,7 +1,7 @@
 pipeline {
  agent any
  parameters {
-     password(name: 'PASSWD', defaultValue: '7396241226@Hu', description: 'Please Enter your Gitlab password')
+     password(name: 'PASSWD', defaultValue: '', description: 'Please Enter your Gitlab password')
      string(name: 'IMAGETAG', defaultValue: '1', description: 'Please Enter the Image Tag to Deploy?')
      choice(name:'environment', choices: ['functional', 'integration', 'regression', 'uat', 'release' ] ,description: 'select where need to deploy')
  }
