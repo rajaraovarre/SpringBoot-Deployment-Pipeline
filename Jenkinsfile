@@ -10,7 +10,7 @@ pipeline {
       steps { 
         git branch: 'main', credentialsId: 'GitlabCred', url: 'https://gitlab.com/udaykumar5980/spingboot-cd-pipeline.git'
 
-        dir ("./${params.environment}") {
+        dir ("./kubernetes${params.environment}") {
           sh "sed -i 's|image: dark5980.*|image: dark5980/demo:${IMAGETAG}|g' deployment.yml"
         }
 
