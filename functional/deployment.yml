@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: wezvatechdemo
-        image: adamtravis/democicd:fb5
+        image: razvarre/springbootapp:fb5
         ports:
         - containerPort: 8080
