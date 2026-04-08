@@ -11,7 +11,7 @@ pipeline {
     steps { 
         git branch: 'springboot', credentialsId: 'GithubCred', url: 'https://github.com/rajaraovarre/SpringBoot-Deployment-Pipeline.git'
       dir ("./${params.environment}") {
-              sh "sed -i 's/image: adamtravis.*/image: adamtravis\\/democicd:$IMAGETAG/g' deployment.yml" 
+              sh "sed -i 's/image: razvarre.*/image: razvarre\\springbootapp:$IMAGETAG/g' deployment.yml" 
 	    }
 		sh 'git config user.email "jenkins@local"'
         sh 'git config user.name "jenkins"'
