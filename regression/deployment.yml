@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: wezvatechdemo
-        image: adamtravis/democicd:int4
+        image: razvarre/springbootapp:int4
         ports:
         - containerPort: 8080
