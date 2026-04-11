@@ -13,6 +13,8 @@ pipeline {
       dir ("./kubernetes") {
               sh "sed -i 's|image: razvarre.*|image: razvarre/springbootapp:${IMAGETAG}|g' deployment.yml"
 	    }
+		sh 'git config user.email "jenkins@local"'
+        sh 'git config user.name "jenkins"'
 		sh 'git add .'
 		sh 'git commit -m "New deployment for Build $IMAGETAG" || echo "No changes"'
 	    withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
