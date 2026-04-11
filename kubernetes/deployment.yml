@@ -15,7 +15,7 @@ spec:
         app: wezvatechdemo
     spec:
       containers:
-      - name: wezvatechdemo
-        image: adamtravis/wezvatechbackend:9
+      - name: springbootcontainer
+        image: razvarre/springbootapp:9
         ports:
         - containerPort: 8080
