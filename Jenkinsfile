@@ -10,7 +10,7 @@ pipeline {
   {
     steps { 
         git branch: 'main', url: 'https://github.com/rajaraovarre/SpringBoot-Deployment-Pipeline.git'
-      dir ("kubernetes") {
+      dir ("./kubernetes") {
               sh "sed -i 's|image: razvarre.*|image: razvarre/springbootapp:${IMAGETAG}|g' deployment.yml"
 	    }
 		sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
