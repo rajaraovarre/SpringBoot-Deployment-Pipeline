@@ -11,7 +11,7 @@ pipeline {
     steps { 
         git branch: 'main', url: 'https://github.com/rajaraovarre/SpringBoot-Deployment-Pipeline.git'
       dir ("./${params.environment}") {
-              sh "sed -i 's/image: razvarre.*/image: razvarre\\springbootapp:$IMAGETAG/g' kubernetes/deployment.yml" 
+              sh "sed -i 's|image: razvarre.*|image: razvarre/springbootapp:1|g' deployment.yml" 
 	    }
 		sh 'git config user.email "jenkins@local"'
         sh 'git config user.name "jenkins"'
