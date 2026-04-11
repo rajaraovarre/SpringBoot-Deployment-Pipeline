@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: springbootcontainer
-        image: razvarre/springbootapp:7
+        image: razvarre/springbootapp:8
         ports:
         - containerPort: 8080
