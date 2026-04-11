@@ -3,7 +3,7 @@ pipeline {
  parameters {
      password(name: 'PASSWD', defaultValue: '', description: 'Please Enter your Github password')
      string(name: 'IMAGETAG', defaultValue: '1', description: 'Please Enter the Image Tag to Deploy?')
-     choice(name:'environment', choices: ['functional', 'integration', 'regression', 'uat', 'release' ] ,description: 'select where need to deploy')
+     //choice(name:'environment', choices: ['functional', 'integration', 'regression', 'uat', 'release' ] ,description: 'select where need to deploy')
  }
  stages {
   stage('Deploy')
