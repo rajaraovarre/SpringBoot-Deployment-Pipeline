@@ -16,7 +16,7 @@ pipeline {
 		sh 'git config user.email "jenkins@local"'
         sh 'git config user.name "jenkins"'
 	    sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
-	    sh "git push origin springboot"
+	    sh "git push origin main"
     }
   }
  }
