@@ -16,7 +16,9 @@ pipeline {
 		sh 'git config user.email "jenkins@local"'
         sh 'git config user.name "jenkins"'
 	    sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
-	    sh "git push origin main"
+	    withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+          sh "git push https://${USER}:${PASS}@github.com/rajaraovarre/SpringBoot-Deployment-Pipeline.git main"
+         }
     }
   }
  }
