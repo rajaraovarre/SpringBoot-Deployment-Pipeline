@@ -13,9 +13,7 @@ pipeline {
       dir ("kubernetes") {
               sh "sed -i 's|image: razvarre.*|image: razvarre/springbootapp:${IMAGETAG}|g' deployment.yml"
 	    }
-		sh 'git config user.email "jenkins@local"'
-        sh 'git config user.name "jenkins"'
-	    sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
+		sh 'git commit -a -m "New deployment for Build $IMAGETAG"'
 	    withCredentials([usernamePassword(credentialsId: 'github-creds', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
           sh "git push https://${USER}:${PASS}@github.com/rajaraovarre/SpringBoot-Deployment-Pipeline.git main"
          }
